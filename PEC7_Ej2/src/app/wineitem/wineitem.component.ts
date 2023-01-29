@@ -5,7 +5,7 @@ import { WineServiceService } from '../wine-service.service';
 @Component({
   selector: 'app-wineitem',
   template: `
-    <div class="wine-card" 
+    <div class="wine-card"  routerLink="/wine/{{wine.id}}"
         [ngClass]="{'insale': wine.isOnSale, 'notsale': !wine.isOnSale}">
         <img src="{{ wine.imageUrl | nullimages }}" alt="Imagen botella de vino" />
         <p>{{ wine.name }}</p>
@@ -61,6 +61,7 @@ export class WineitemComponent {
       price: 0,
       isOnSale: false,
       quantityInCart: 0,
+      description: '',
       foodPairing: []
     }
   }

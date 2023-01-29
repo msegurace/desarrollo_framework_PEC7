@@ -2,7 +2,8 @@
 <div class="form-group">
     <form [formGroup]="wineForm" (ngSubmit)="onSubmit()">
         <div class="wine-name">
-            <input type="text" placeholder="wine Name" name="wineName" formControlName="name" aria-label="name">
+            <input type="text" placeholder="wine Name" name="wineName"
+             formControlName="name" aria-label="name">
         </div>
         <div class="error" *ngIf="wineForm.get('name')?.invalid &&     
             (wineForm.get('name')?.dirty || wineForm.get('name')?.touched )">

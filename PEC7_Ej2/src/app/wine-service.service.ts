@@ -14,6 +14,11 @@ export class WineServiceService {
 
   constructor(private http: HttpClient) { }
 
+  getWine(code: string): Observable<Wine> {
+    console.log("Getwine: " + code);
+    return this.http.get<Wine>(this.BASE_URL + '/api/wine/' + code);
+  }
+
   getWines(query: string): Observable<Wine[]> {
     return this.http.get<Wine[]>(this.BASE_URL + '/api/wine', {
       params: {q: query},

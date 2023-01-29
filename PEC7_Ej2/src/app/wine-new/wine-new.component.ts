@@ -23,6 +23,7 @@ export class WineNewComponent {
       price: 0,
       isOnSale: false,
       quantityInCart: 0,
+      description:'',
       foodPairing: []
     }
   }

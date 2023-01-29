@@ -7,6 +7,7 @@ export interface Wine {
     price: number;
     isOnSale: boolean;
     quantityInCart: number;
+    description: string;
     foodPairing: Food[];
 }
 
