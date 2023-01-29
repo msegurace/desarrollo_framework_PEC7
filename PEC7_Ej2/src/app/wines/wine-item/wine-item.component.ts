@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { Wine } from '../models/wine.model';
-import { WineServiceService } from '../wine-service.service';
+import { Router } from '@angular/router';
+import { Wine } from '../../models/wine.model';
+import { WineServiceService } from '../../service/wine-service.service';
 
 @Component({
   selector: 'app-wineitem',
   template: `
-    <div class="wine-card"  routerLink="/wine/{{wine.id}}"
+    <div class="wine-card" (click)="showDetail();"
         [ngClass]="{'insale': wine.isOnSale, 'notsale': !wine.isOnSale}">
         <img src="{{ wine.imageUrl | nullimages }}" alt="Imagen botella de vino" />
         <p>{{ wine.name }}</p>
@@ -53,7 +54,7 @@ export class WineitemComponent {
 
   @Input() public wine: Wine;
 
-  constructor(private wineService: WineServiceService) {
+  constructor(private wineService: WineServiceService, private router: Router) {
     this.wine = {
       id: 0,
       name: '', 
@@ -74,6 +75,10 @@ export class WineitemComponent {
   decrementInCart() {
     this.wineService.changeQuantity(this.wine, -1)
       .subscribe((wine) => this.wine.quantityInCart -= 1);
+  }
+
+  showDetail() {
+    this.router.navigate(["wine", this.wine.id]);
   }
 
 }

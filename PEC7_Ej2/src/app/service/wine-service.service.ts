@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { Wine } from './models/wine.model';
+import { Wine } from '../models/wine.model';
 
 @Injectable({
   providedIn: 'root'

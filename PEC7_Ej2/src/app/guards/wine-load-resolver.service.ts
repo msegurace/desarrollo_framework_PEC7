@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot }
   from '@angular/router';
 import { Wine } from '../models/wine.model';
 import { Observable } from 'rxjs';
-import { WineServiceService } from '../wine-service.service';
+import { WineServiceService } from '../service/wine-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class WineLoadResolverService implements Resolve<Wine> {
   resolve(route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):
       Wine | Observable<Wine> | Promise<Wine> {
+        console.log('resolve code: ' + route.paramMap.get('code'));
         const wineCode = route.paramMap.get('code');
         return this.wineService.getWine(wineCode!);
       }

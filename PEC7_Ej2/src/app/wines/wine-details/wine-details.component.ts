@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Wine } from '../models/wine.model';
-import { WineServiceService } from '../wine-service.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Wine } from '../../models/wine.model';
 
 @Component({
   selector: 'app-wine-details',
@@ -11,8 +10,8 @@ import { WineServiceService } from '../wine-service.service';
 export class WineDetailsComponent implements OnInit {
 
   public wine?: Wine;
-  constructor(private wineService: WineServiceService,
-    private route: ActivatedRoute) {
+  
+  constructor(private route: ActivatedRoute) {
 
   }
   ngOnInit(): void {
@@ -20,8 +19,6 @@ export class WineDetailsComponent implements OnInit {
       this.wine = data.wine;
     });
   }
-
- 
 
 }
 

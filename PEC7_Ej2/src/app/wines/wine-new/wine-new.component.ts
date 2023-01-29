@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { CustomWineValidator } from '../custom-wine-validator';
-import { Wine } from '../models/wine.model';
-import { WineServiceService } from '../wine-service.service';
+import { CustomWineValidator } from 'src/app/validators/custom-wine-validator';
+import { Wine } from '../../models/wine.model';
+import { WineServiceService } from '../../service/wine-service.service';
 
 @Component({
   selector: 'app-wine-new',

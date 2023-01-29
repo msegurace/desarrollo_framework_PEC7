@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { merge, Observable, Subject } from 'rxjs';
-import { Wine } from '../models/wine.model';
-import { WineServiceService } from '../wine-service.service';
+import { Wine } from '../../models/wine.model';
+import { WineServiceService } from '../../service/wine-service.service';
 import { debounceTime, switchMap,
   distinctUntilChanged, startWith,
   share} from 'rxjs/operators';
 
 @Component({
   selector: 'app-winelist',
-  templateUrl: './winelist.component.html',
-  styleUrls: ['./winelist.component.css']
+  templateUrl: './wine-list.component.html',
+  styleUrls: ['./wine-list.component.css']
 })
 export class WinelistComponent implements OnInit {
 

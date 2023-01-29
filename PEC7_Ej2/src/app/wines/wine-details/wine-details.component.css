@@ -24,3 +24,16 @@
   .notsale {
     background-color: white;
   }
+
+  table {
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 200px;
+  }
+  
+  th,
+  td {
+    border: 1px solid black;
+    width: 100px;
+    overflow: hidden;
+  }
