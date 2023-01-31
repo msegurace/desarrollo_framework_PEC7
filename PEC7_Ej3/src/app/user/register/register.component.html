@@ -1,0 +1,33 @@
+<h3>{{message}}</h3>
+<div class="form-group">
+  <form [formGroup]="userForm" (ngSubmit)="register()">
+    <div class="user-name">
+      <input type="text"
+             placeholder="Username"
+             name="username"
+             formControlName="username"
+             aria-label="username">
+        <div class="error" *ngIf="userForm.get('username')?.invalid &&     
+             (userForm.get('username')?.dirty || userForm.get('username')?.touched )">
+             <div *ngIf="userForm.get('username')?.getError('required')">
+                 The Wine name is required
+             </div>
+         </div>
+    </div>
+    <div class="password">
+      <input type="password"
+             placeholder="Password"
+             name="password"
+             formControlName="password"
+             aria-label="password">
+          <div class="error" *ngIf="userForm.get('password')?.invalid &&     
+             (userForm.get('password')?.dirty || userForm.get('password')?.touched )">
+             <div *ngIf="userForm.get('password')?.getError('required')">
+                 The Wine name is required
+             </div>
+         </div>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+</div>

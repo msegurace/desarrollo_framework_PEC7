@@ -1,0 +1,25 @@
+<div class="wine-card">
+<img src="{{ wine!.imageUrl | nullimages }}" alt="Imagen botella de vino" />
+<p>Name: {{ wine!.name }}</p>
+<p>Price: {{ wine!.price|currency:'EUR':true}}</p>
+<p>Description: {{ wine!.description}}</p>
+<br />
+<h2>Food Pairing</h2>
+<table class="table">
+    
+    <thead>
+        <th>Food</th>
+        <th>KCal.</th>
+        <th>Vegan?</th>
+        <th>Has Gluten?</th>
+    </thead>  
+    <tbody>
+        <tr *ngFor="let fp of wine!.foodPairing;">
+            <td>{{ fp.name }}</td>
+            <td>{{ fp.kcal }}</td>
+            <td>{{ fp.vegan }}</td>
+            <td>{{ fp.gluten }}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
